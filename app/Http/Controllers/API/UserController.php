@@ -16,7 +16,12 @@ class UserController extends BaseController
         $request->merge([
             "password" => bcrypt($request->input("password"))
         ]);
-        $user = User::create($request->all());
+        $user = User::create([
+            "name" => $request->input("nombres")." ".$request->input("apellidopaterno")." ".$request->input("apellidomaterno"),
+            "email" => $request->input("email"),            
+            "password" => bcrypt($request->input("password"))
+        ]);
+        // $user = User::create($request->all());
         return $this->sendResponse($user, "Usuario Creado", 201);
     }
 
