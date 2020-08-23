@@ -17,8 +17,8 @@ class ProgramaController extends BaseController
      */
     public function index()
     {
-        $data = Programa::all();
-        return $this->sendResponse($data, 'lista de programas');
+        $programas = Programa::all();
+        return $this->sendResponse($programas, 'lista de programas');
     }
 
     /**
@@ -29,8 +29,8 @@ class ProgramaController extends BaseController
      */
     public function store(Request $request)
     {
-        $data = Programa::create($request->all());
-        return $this->sendResponse($data, 'Programa creado');
+        $programa = Programa::create($request->all());
+        return $this->sendResponse($programa, 'Programa creado');
     }
 
     /**
@@ -41,7 +41,7 @@ class ProgramaController extends BaseController
      */
     public function show(Programa $programa)
     {
-        //
+        return $this->sendResponse($programa, 'Programa recuperado');
     }
 
     /**
@@ -53,7 +53,8 @@ class ProgramaController extends BaseController
      */
     public function update(Request $request, Programa $programa)
     {
-        //
+        $programa->update($request->all());
+        return $this->sendResponse($programa, 'Programa Editado');
     }
 
     /**
