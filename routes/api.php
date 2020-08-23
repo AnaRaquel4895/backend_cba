@@ -27,3 +27,7 @@ Route::group(['middleware'=>'auth:api'],function(){
     Route::get('auth/me', 'API\UserController@me');
     
 });
+
+// Routes for Programas
+Route::get('programas', 'API\ProgramaController@index');
+Route::post('programas', 'API\ProgramaController@store');
