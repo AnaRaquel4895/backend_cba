@@ -5,8 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\MODELS\Gestion;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController;
 
-class GestionController extends Controller
+
+class GestionController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class GestionController extends Controller
      */
     public function index()
     {
-        //
+        $gestiones = Gestion::all();
+        return $this->sendResponse($gestiones, 'Lista de gestiones');
     }
 
     /**
@@ -26,7 +29,8 @@ class GestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gestion = Gestion::create($request->all());
+        return $this->sendResponse($gestion, 'Gestion creada');
     }
 
     /**
@@ -37,7 +41,7 @@ class GestionController extends Controller
      */
     public function show(Gestion $gestion)
     {
-        //
+        return $this->sendResponse($gestion, 'Gestion recuperada');
     }
 
     /**
@@ -49,7 +53,8 @@ class GestionController extends Controller
      */
     public function update(Request $request, Gestion $gestion)
     {
-        //
+        $gestion->update($request->all());
+        return $this->sendResponse($gestion, 'Gestion editada');
     }
 
     /**

@@ -5,8 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\MODELS\Curso;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController;
 
-class CursoController extends Controller
+class CursoController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,8 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $cursos = Curso::all();
+        return $this->sendResponse($cursos, 'Lista de cursos');
     }
 
     /**
@@ -26,7 +28,8 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $curso = Curso::create($request->all());
+        return $this->sendResponse($curso, 'Curso creado');
     }
 
     /**
@@ -37,7 +40,7 @@ class CursoController extends Controller
      */
     public function show(Curso $curso)
     {
-        //
+        return $this->sendResponse($curso, 'Curso recuperado');
     }
 
     /**
@@ -49,7 +52,8 @@ class CursoController extends Controller
      */
     public function update(Request $request, Curso $curso)
     {
-        //
+        $curso->update($request->all());
+        return $this->sendResponse($curso, 'Curso editado');
     }
 
     /**

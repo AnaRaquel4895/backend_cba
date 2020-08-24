@@ -5,8 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\MODELS\Nivel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController;
 
-class NivelController extends Controller
+
+class NivelController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class NivelController extends Controller
      */
     public function index()
     {
-        //
+        $niveles = Nivel::all();
+        return $this->sendResponse($niveles, 'Lista de niveles');
     }
 
     /**
@@ -26,7 +29,8 @@ class NivelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nivel = Nivel::create($request->all());
+        return $this->sendResponse($nivel, 'Nivel creado');
     }
 
     /**
@@ -37,7 +41,7 @@ class NivelController extends Controller
      */
     public function show(Nivel $nivel)
     {
-        //
+        return $this->sendResponse($nivel, 'Nivel recuperado');
     }
 
     /**
@@ -49,7 +53,8 @@ class NivelController extends Controller
      */
     public function update(Request $request, Nivel $nivel)
     {
-        //
+        $nivel->update($request->all());
+        return $this->sendResponse($nivel, 'Nivel editado');
     }
 
     /**

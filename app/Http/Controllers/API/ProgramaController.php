@@ -18,7 +18,7 @@ class ProgramaController extends BaseController
     public function index()
     {
         $programas = Programa::all();
-        return $this->sendResponse($programas, 'lista de programas');
+        return $this->sendResponse($programas, 'Lista de programas');
     }
 
     /**
@@ -54,7 +54,7 @@ class ProgramaController extends BaseController
     public function update(Request $request, Programa $programa)
     {
         $programa->update($request->all());
-        return $this->sendResponse($programa, 'Programa Editado');
+        return $this->sendResponse($programa, 'Programa editado');
     }
 
     /**
