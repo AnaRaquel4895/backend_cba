@@ -15,6 +15,8 @@ class CreateGestionesTable extends Migration
     {
         Schema::create('gestiones', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('descripcion'); 
             $table->timestamps();
         });
     }
