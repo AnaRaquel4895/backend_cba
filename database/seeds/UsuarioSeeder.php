@@ -25,45 +25,43 @@ class UsuarioSeeder extends Seeder
             'password' => Hash::make('admin'),
         ]);
         */
-            // Reset cached roles and permissions
-            app()[PermissionRegistrar::class]->forgetCachedPermissions();
+        // Reset cached roles and permissions
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-            // create permissions
-            Permission::create(['name' => 'edit articles']);
-            Permission::create(['name' => 'delete articles']);
-            Permission::create(['name' => 'publish articles']);
-            Permission::create(['name' => 'unpublish articles']);
-    
-            // create roles and assign existing permissions
-            $role1 = Role::create(['name' => 'writer']);
-            $role1->givePermissionTo('edit articles');
-            $role1->givePermissionTo('delete articles');
-    
-            $role2 = Role::create(['name' => 'admin']);
-            $role2->givePermissionTo('publish articles');
-            $role2->givePermissionTo('unpublish articles');
-    
-            $role3 = Role::create(['name' => 'super-admin']);
-            // create demo users
-            $user = Factory(App\User::class)->create([
-                'name' => 'Example User',
-                'email' => 'test@example.com',
-            ]);
-            $user->assignRole($role1);
+        // create permissions
+        Permission::create(['name' => 'edit articles']);
+        Permission::create(['name' => 'delete articles']);
+        Permission::create(['name' => 'publish articles']);
+        Permission::create(['name' => 'unpublish articles']);
 
-            $user = Factory(App\User::class)->create([
-                'name' => 'Example Admin User',
-                'email' => 'admin@example.com',
-            ]);
-            $user->assignRole($role2);
+        // create roles and assign existing permissions
+        $role1 = Role::create(['name' => 'writer']);
+        $role1->givePermissionTo('edit articles');
+        $role1->givePermissionTo('delete articles');
 
-            $user = Factory(App\User::class)->create([
-                'name' => 'Example Super-Admin User',
-                'email' => 'superadmin@example.com',
-                'password' => Hash::make('superadmin'),
-            ]);
-            $user->assignRole($role3);
+        $role2 = Role::create(['name' => 'admin']);
+        $role2->givePermissionTo('publish articles');
+        $role2->givePermissionTo('unpublish articles');
 
+        $role3 = Role::create(['name' => 'super-admin']);
+        // create demo users
+        $user = Factory(App\User::class)->create([
+            'name' => 'Example User',
+            'email' => 'test@example.com',
+        ]);
+        $user->assignRole($role1);
 
+        $user = Factory(App\User::class)->create([
+            'name' => 'Example Admin User',
+            'email' => 'admin@example.com',
+        ]);
+        $user->assignRole($role2);
+
+        $user = Factory(App\User::class)->create([
+            'name' => 'Example Super-Admin User',
+            'email' => 'superadmin@example.com',
+            'password' => Hash::make('superadmin'),
+        ]);
+        $user->assignRole($role3);
     }
 }
