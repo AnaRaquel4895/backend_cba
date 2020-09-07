@@ -56,3 +56,6 @@ Route::get('niveles', 'API\NivelController@index');
 Route::post('niveles', 'API\NivelController@store');
 Route::get('niveles/{nivel}/', 'API\NivelController@show');
 Route::put('niveles/{nivel}/', 'API\NivelController@update');
+
+// Routes for Niveles
+Route::post('perfiles-usuarios', 'API\PerfilUsuarioController@store');

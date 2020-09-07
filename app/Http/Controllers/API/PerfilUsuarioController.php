@@ -5,8 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\MODELS\PerfilUsuario;
 use Illuminate\Http\Request;
+use App\User;
+use App\Http\Controllers\API\BaseController;
 
-class PerfilUsuarioController extends Controller
+class PerfilUsuarioController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +28,25 @@ class PerfilUsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->merge([
+            "password" => bcrypt($request->input("password"))
+        ]);
+        $user = User::create([
+            "name" => $request->input("nombres") . " " . $request->input("apellido_paterno") . " " . $request->input("apellido_materno"),
+            "email" => $request->input("email"),
+            "password" => $request->input("password")
+        ]);
+
+        $perfil = PerfilUsuario::create([
+            'nombres' => $request->input("nombres"),
+            'apellido_paterno' => $request->input("apellido_paterno"),
+            'apellido_materno' => $request->input("apellido_materno"),
+            'carnet_identidad' => $request->input("carnet_identidad"),
+            'celular' => $request->input("celular"),
+            'user_id' => $user->id
+        ]);
+
+        return $this->sendResponse($perfil, 'Cuenta y perfil creada');
     }
 
     /**
