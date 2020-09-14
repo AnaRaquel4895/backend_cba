@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
+use App\MODELS\PerfilUsuario;
 
 
 class UsuarioSeeder extends Seeder
@@ -146,5 +147,56 @@ class UsuarioSeeder extends Seeder
             'password' => Hash::make('123456'),
         ]);
         $estudiante6->assignRole($roleEstudiante);
+
+        
+
+        /**
+         * Creando perfiles para los  estudiantes y docentes.
+         */
+        $perfilProfesor1 = PerfilUsuario::create([
+            'nombres' => 'Julia',
+            'apellido_paterno' => 'Rocabado',
+            'apellido_materno' => '',
+            'carnet_identidad' => '',
+            'celular' => '',
+            'user_id' => $profesor1->id
+        ]);
+
+        $perfilProfesor1 = PerfilUsuario::create([
+            'nombres' => 'Vanesa',
+            'apellido_paterno' => 'Lopez',
+            'apellido_materno' => '',
+            'carnet_identidad' => '',
+            'celular' => '',
+            'user_id' => $profesor2->id
+        ]);
+
+        $perfilEstudiante1 = PerfilUsuario::create([
+            'nombres' => 'Henrry',
+            'apellido_paterno' => 'Soria',
+            'apellido_materno' => '',
+            'carnet_identidad' => '',
+            'celular' => '',
+            'user_id' => $estudiante1->id
+        ]);
+
+        $perfilEstudiante2 = PerfilUsuario::create([
+            'nombres' => 'Isabel',
+            'apellido_paterno' => 'Aban',
+            'apellido_materno' => '',
+            'carnet_identidad' => '',
+            'celular' => '',
+            'user_id' => $estudiante2->id
+        ]);
+
+        $perfilEstudiante3 = PerfilUsuario::create([
+            'nombres' => 'Franklin',
+            'apellido_paterno' => 'Morales',
+            'apellido_materno' => '',
+            'carnet_identidad' => '',
+            'celular' => '',
+            'user_id' => $estudiante3->id
+        ]);
+
     }
 }
