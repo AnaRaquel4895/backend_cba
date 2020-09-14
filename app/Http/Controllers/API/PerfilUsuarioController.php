@@ -17,8 +17,14 @@ class PerfilUsuarioController extends BaseController
      */
     public function index()
     {
-        //
     }
+
+    public function indexByRoles($role_id)
+    {
+        $perfiles = PerfilUsuario::getPerfiles($role_id);
+        return $this->sendResponse( $perfiles, 'Lista de perfiles recuperados');
+    }
+
 
     /**
      * Store a newly created resource in storage.

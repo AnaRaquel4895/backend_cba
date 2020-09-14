@@ -59,3 +59,4 @@ Route::put('niveles/{nivel}/', 'API\NivelController@update');
 
 // Routes for Niveles
 Route::post('perfiles-usuarios', 'API\PerfilUsuarioController@store');
+Route::get('perfiles-usuarios/by-roles/{role_id}', 'API\PerfilUsuarioController@indexByRoles');

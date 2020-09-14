@@ -3,6 +3,8 @@
 namespace App\MODELS;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
 
 class PerfilUsuario extends Model
 {
@@ -18,4 +20,14 @@ class PerfilUsuario extends Model
     ];
 
     protected $hidden = ['created_at', 'updated_at'];
+
+    public static function getPerfiles($role_id)
+    {
+        $results = DB::select('select p.id, p.nombres, p.apellido_paterno, p.apellido_materno, p.carnet_identidad, p.celular, p.user_id 
+        from perfil_usuario as p, users, model_has_roles
+        where users.id = p.user_id AND
+        model_has_roles.model_id = users.id AND 
+        model_has_roles.role_id = :role_id;', ['role_id' => $role_id]);
+        return $results;
+    }
 }
