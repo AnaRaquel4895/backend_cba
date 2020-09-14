@@ -13,7 +13,7 @@ class ProgramaSeeder extends Seeder
     public function run()
     {
         DB::table('programas')->insert([
-            'nombre' => 'Estandar',
+            'nombre' => 'Standard',
             'descripcion' => ''
         ]);
 

@@ -84,45 +84,67 @@ class UsuarioSeeder extends Seeder
         $admin2->assignRole($roleAdministrativo);
 
         $profesor1 = Factory(App\User::class)->create([
-            'name' => 'Julia Rocabado',
+            'name' => 'Edgar Buezo',
             'email' => 'j.rocabado@example.com',
             'password' => Hash::make('123456'),
         ]);
         $profesor1->assignRole($roleProfesor);
 
         $profesor2 = Factory(App\User::class)->create([
-            'name' => 'Vanesa Lopez',
-            'email' => 'v.lopez@example.com',
+            'name' => 'Viveka Alba',
+            'email' => 'v.alba@example.com',
             'password' => Hash::make('123456'),
         ]);
         $profesor2->assignRole($roleProfesor);
-
+        $profesor3 = Factory(App\User::class)->create([
+            'name' => 'Fernando Garcia',
+            'email' => 'v.lopez@example.com',
+            'password' => Hash::make('123456'),
+        ]);
+        $profesor3->assignRole($roleProfesor);
+        $profesor4 = Factory(App\User::class)->create([
+            'name' => 'Claudia Chiarella',
+            'email' => 'c.chiarella@example.com',
+            'password' => Hash::make('123456'),
+        ]);
+        $profesor4->assignRole($roleProfesor);
         $estudiante1 = Factory(App\User::class)->create([
-            'name' => 'Henrry Soria',
+            'name' => 'Maria Jose Gonzales',
             'email' => 'h.soria@example.com',
             'password' => Hash::make('123456'),
         ]);
         $estudiante1->assignRole($roleEstudiante);
-
         $estudiante2 = Factory(App\User::class)->create([
-            'name' => 'Isabel Aban',
-            'email' => 'i.aban@example.com',
+            'name' => 'Lucas Ayala',
+            'email' => 'l.ayala@example.com',
             'password' => Hash::make('123456'),
         ]);
         $estudiante2->assignRole($roleEstudiante);
-
         $estudiante3 = Factory(App\User::class)->create([
-            'name' => 'Franklin Morales',
-            'email' => 'f.morales@example.com',
+            'name' => 'Manuel Torrico',
+            'email' => 'i.aban@example.com',
             'password' => Hash::make('123456'),
         ]);
         $estudiante3->assignRole($roleEstudiante);
 
         $estudiante4 = Factory(App\User::class)->create([
+            'name' => 'Franklin Morales',
+            'email' => 'f.morales@example.com',
+            'password' => Hash::make('123456'),
+        ]);
+        $estudiante4->assignRole($roleEstudiante);
+        $estudiante5 = Factory(App\User::class)->create([
+            'name' => 'Jhonatan Candia',
+            'email' => 'j.candia@example.com',
+            'password' => Hash::make('123456'),
+        ]);
+        $estudiante5->assignRole($roleEstudiante);
+
+        $estudiante6 = Factory(App\User::class)->create([
             'name' => 'Luis Perez',
             'email' => 'l.perez@example.com',
             'password' => Hash::make('123456'),
         ]);
-        $estudiante4->assignRole($roleEstudiante);
+        $estudiante6->assignRole($roleEstudiante);
     }
 }
