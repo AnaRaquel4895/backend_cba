@@ -7,6 +7,8 @@ use App\MODELS\PerfilUsuario;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\API\BaseController;
+use Spatie\Permission\Models\Role;
+
 
 class PerfilUsuarioController extends BaseController
 {
@@ -51,6 +53,9 @@ class PerfilUsuarioController extends BaseController
             'celular' => $request->input("celular"),
             'user_id' => $user->id
         ]);
+
+        $role = Role::find($request->input("role_id"));
+        $user->assignRole($role);
 
         return $this->sendResponse($perfil, 'Cuenta y perfil creada');
     }
