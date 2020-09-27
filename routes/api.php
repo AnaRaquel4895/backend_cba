@@ -63,3 +63,4 @@ Route::get('perfiles-usuarios/by-roles/{role_id}', 'API\PerfilUsuarioController@
 
 // Routes for Grupos
 Route::post('grupos', 'API\GrupoController@store');
+Route::get('grupos', 'API\GrupoController@index');

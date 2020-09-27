@@ -18,4 +18,15 @@ class Grupo extends Model
     ];
 
     protected $hidden = ['created_at', 'updated_at'];
+
+    public function programa()
+    {
+        return $this->belongsTo('App\MODELS\Programa');
+    }
+
+
+    public function getProgramaDataAttribute()
+    {
+        return $this->programa->nombre;
+    }
 }

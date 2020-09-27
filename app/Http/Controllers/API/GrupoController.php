@@ -15,8 +15,9 @@ class GrupoController extends BaseController
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $grupos = Grupo::where('id', '>', 0)->get();     
+        return $this->sendResponse($grupos, 'Lista de Grupos');
     }
 
     /**
@@ -27,8 +28,8 @@ class GrupoController extends BaseController
      */
     public function store(Request $request)
     {
-        $horarios = Grupo::create($request->all());
-        return $this->sendResponse($horarios, 'Grupo creado');
+        $grupo = Grupo::create($request->all());
+        return $this->sendResponse($grupo, 'Grupo creado');
     }
 
     /**
