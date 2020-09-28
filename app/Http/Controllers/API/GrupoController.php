@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\MODELS\Grupo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController;
+use App\Http\Resources\GrupoResource;
 
 class GrupoController extends BaseController
 {
@@ -15,9 +16,11 @@ class GrupoController extends BaseController
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $grupos = Grupo::where('id', '>', 0)->get();     
-        return $this->sendResponse($grupos, 'Lista de Grupos');
+    {
+
+        $grupos = Grupo::where('id', '>', 0)->get();
+        $collection = GrupoResource::collection($grupos);
+        return $this->sendResponse($collection, 'Lista de Grupos');
     }
 
     /**
