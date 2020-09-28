@@ -43,7 +43,7 @@ class GrupoController extends BaseController
      */
     public function show(Grupo $grupo)
     {
-        //
+        return new GrupoResource($grupo);
     }
 
     /**
