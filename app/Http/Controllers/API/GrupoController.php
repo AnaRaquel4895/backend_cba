@@ -17,7 +17,6 @@ class GrupoController extends BaseController
      */
     public function index()
     {
-
         $grupos = Grupo::where('id', '>', 0)->get();
         $collection = GrupoResource::collection($grupos);
         return $this->sendResponse($collection, 'Lista de Grupos');

@@ -61,7 +61,14 @@ Route::put('niveles/{nivel}/', 'API\NivelController@update');
 Route::post('perfiles-usuarios', 'API\PerfilUsuarioController@store');
 Route::get('perfiles-usuarios/by-roles/{role_id}', 'API\PerfilUsuarioController@indexByRoles');
 
+
 // Routes for Grupos
 Route::post('grupos', 'API\GrupoController@store');
 Route::get('grupos', 'API\GrupoController@index');
 Route::get('grupos/{grupo}/', 'API\GrupoController@show');
+
+
+// Routes for InscripcionGrupo
+Route::post('inscripciones', 'API\InscripcionGrupoController@store');
+Route::get('inscripciones/by-grupo/{grupo_id}', 'API\InscripcionGrupoController@indexByGrupo');
+Route::delete('inscripciones/{inscripcionGrupo}', 'API\InscripcionGrupoController@destroy');

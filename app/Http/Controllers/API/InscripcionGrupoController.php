@@ -5,8 +5,11 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\MODELS\InscripcionGrupo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController;
+use App\Http\Resources\InscripcionGrupoResource;
 
-class InscripcionGrupoController extends Controller
+
+class InscripcionGrupoController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,13 @@ class InscripcionGrupoController extends Controller
      */
     public function index()
     {
-        //
+    }
+
+    public function indexByGrupo($grupo_id)
+    {
+        $inscripcionGrupo = InscripcionGrupo::where('grupo_id', '=', $grupo_id)->get();
+        $collection = InscripcionGrupoResource::collection($inscripcionGrupo);
+        return $this->sendResponse($collection, 'Lista de Inscritos al grupo');
     }
 
     /**
@@ -26,7 +35,9 @@ class InscripcionGrupoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inscripcionGrupo = InscripcionGrupo::create($request->all());
+        $resource = new InscripcionGrupoResource($inscripcionGrupo);
+        return $this->sendResponse($resource, 'Inscripcion Realizada');
     }
 
     /**
@@ -60,6 +71,7 @@ class InscripcionGrupoController extends Controller
      */
     public function destroy(InscripcionGrupo $inscripcionGrupo)
     {
-        //
+        $inscripcionGrupo->delete();
+        return $this->sendResponse($inscripcionGrupo, 'Inscripcion Eliminada');
     }
 }
