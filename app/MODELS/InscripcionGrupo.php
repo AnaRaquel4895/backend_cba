@@ -19,4 +19,9 @@ class InscripcionGrupo extends Model
     {
         return $this->belongsTo('App\MODELS\PerfilUsuario');
     }
+
+    public function calificacionInscripcion()
+    {
+        return $this->hasOne('App\MODELS\CalificacionInscripcion');
+    }
 }

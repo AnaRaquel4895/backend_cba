@@ -7,6 +7,7 @@ use App\MODELS\InscripcionGrupo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController;
 use App\Http\Resources\InscripcionGrupoResource;
+use App\MODELS\CalificacionInscripcion;
 
 
 class InscripcionGrupoController extends BaseController
@@ -36,6 +37,7 @@ class InscripcionGrupoController extends BaseController
     public function store(Request $request)
     {
         $inscripcionGrupo = InscripcionGrupo::create($request->all());
+        $calificacionInscripcion = CalificacionInscripcion::create(['inscripcion_grupo_id' => $inscripcionGrupo->id]);
         $resource = new InscripcionGrupoResource($inscripcionGrupo);
         return $this->sendResponse($resource, 'Inscripcion Realizada');
     }

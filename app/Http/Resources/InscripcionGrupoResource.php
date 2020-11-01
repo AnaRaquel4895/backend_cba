@@ -18,7 +18,8 @@ class InscripcionGrupoResource extends JsonResource
             'id' => $this->id,
             'grupo_id' => $this->grupo_id,
             'perfil_usuario_id' => $this->perfil_usuario_id,
-            'perfil_usuario' => $this->perfilUsuario
+            'perfil_usuario' => $this->perfilUsuario,
+            'calificacion_inscripcion' => $this->calificacionInscripcion
         ];
     }
 }
