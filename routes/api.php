@@ -72,3 +72,6 @@ Route::get('grupos/{grupo}/', 'API\GrupoController@show');
 Route::post('inscripciones', 'API\InscripcionGrupoController@store');
 Route::get('inscripciones/by-grupo/{grupo_id}', 'API\InscripcionGrupoController@indexByGrupo');
 Route::delete('inscripciones/{inscripcionGrupo}', 'API\InscripcionGrupoController@destroy');
+
+// Routes for CalificacionInscripcion
+Route::put('calificaciones-inscripciones/{calificacionInscripcion}/', 'API\CalificacionInscripcionController@update');

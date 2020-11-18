@@ -5,8 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\MODELS\CalificacionInscripcion;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController;
 
-class CalificacionInscripcionController extends Controller
+class CalificacionInscripcionController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -49,7 +50,8 @@ class CalificacionInscripcionController extends Controller
      */
     public function update(Request $request, CalificacionInscripcion $calificacionInscripcion)
     {
-        //
+        $calificacionInscripcion->update($request->all());
+        return $this->sendResponse($calificacionInscripcion, 'Notas editadas');
     }
 
     /**
