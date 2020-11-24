@@ -75,3 +75,7 @@ Route::delete('inscripciones/{inscripcionGrupo}', 'API\InscripcionGrupoControlle
 
 // Routes for CalificacionInscripcion
 Route::put('calificaciones-inscripciones/{calificacionInscripcion}/', 'API\CalificacionInscripcionController@update');
+
+// Routes for Evento
+Route::post('eventos', 'API\EventoController@store');
+Route::get('eventos', 'API\EventoController@index');
