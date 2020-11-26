@@ -57,9 +57,11 @@ Route::post('niveles', 'API\NivelController@store');
 Route::get('niveles/{nivel}/', 'API\NivelController@show');
 Route::put('niveles/{nivel}/', 'API\NivelController@update');
 
-// Routes for Niveles
+// Routes for Perfiles Usuarios
 Route::post('perfiles-usuarios', 'API\PerfilUsuarioController@store');
 Route::get('perfiles-usuarios/by-roles/{role_id}', 'API\PerfilUsuarioController@indexByRoles');
+Route::get('perfiles-usuarios/{perfilUsuario}/', 'API\PerfilUsuarioController@show');
+Route::put('perfiles-usuarios/{perfilUsuario}/', 'API\PerfilUsuarioController@update');
 
 
 // Routes for Grupos

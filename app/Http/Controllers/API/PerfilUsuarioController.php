@@ -68,7 +68,7 @@ class PerfilUsuarioController extends BaseController
      */
     public function show(PerfilUsuario $perfilUsuario)
     {
-        //
+        return $this->sendResponse($perfilUsuario, 'Perfil recuperado');
     }
 
     /**
@@ -80,7 +80,8 @@ class PerfilUsuarioController extends BaseController
      */
     public function update(Request $request, PerfilUsuario $perfilUsuario)
     {
-        //
+        $perfilUsuario->update($request->all());
+        return $this->sendResponse($perfilUsuario, 'Perfil editado');
     }
 
     /**

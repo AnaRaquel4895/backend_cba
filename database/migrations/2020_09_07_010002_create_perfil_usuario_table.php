@@ -18,9 +18,9 @@ class CreatePerfilUsuarioTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string("nombres");
             $table->string("apellido_paterno");
-            $table->string("apellido_materno");
+            $table->string("apellido_materno")->nullable();
             $table->string("carnet_identidad");
-            $table->string("celular");
+            $table->string("celular")->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
