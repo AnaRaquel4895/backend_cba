@@ -81,3 +81,5 @@ Route::put('calificaciones-inscripciones/{calificacionInscripcion}/', 'API\Calif
 // Routes for Evento
 Route::post('eventos', 'API\EventoController@store');
 Route::get('eventos', 'API\EventoController@index');
+Route::get('eventos/{evento}/', 'API\EventoController@show');
+Route::put('eventos/{evento}/', 'API\EventoController@update');

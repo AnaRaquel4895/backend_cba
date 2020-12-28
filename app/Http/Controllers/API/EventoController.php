@@ -40,7 +40,7 @@ class EventoController extends BaseController
      */
     public function show(Evento $evento)
     {
-        //
+        return $this->sendResponse($evento, 'Evento recuperado');
     }
 
     /**
@@ -52,7 +52,8 @@ class EventoController extends BaseController
      */
     public function update(Request $request, Evento $evento)
     {
-        //
+        $evento->update($request->all());
+        return $this->sendResponse($evento, 'Evento Editado');
     }
 
     /**
