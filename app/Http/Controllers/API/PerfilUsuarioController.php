@@ -90,8 +90,12 @@ class PerfilUsuarioController extends BaseController
      * @param  \App\MODELS\PerfilUsuario  $perfilUsuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PerfilUsuario $perfilUsuario)
+    public function destroy($idPerfilUsuario)
     {
-        //
+        $perfilUsuario = PerfilUsuario::withTrashed()->where('id' , $idPerfilUsuario)->first();
+        // dd($perfilUsuario);
+        // $perfilUsuario->restore();
+        $perfilUsuario->delete();
+        return $this->sendResponse($perfilUsuario, 'Perfil eliminado');
     }
 }

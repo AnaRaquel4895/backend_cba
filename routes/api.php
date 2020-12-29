@@ -62,6 +62,7 @@ Route::post('perfiles-usuarios', 'API\PerfilUsuarioController@store');
 Route::get('perfiles-usuarios/by-roles/{role_id}', 'API\PerfilUsuarioController@indexByRoles');
 Route::get('perfiles-usuarios/{perfilUsuario}/', 'API\PerfilUsuarioController@show');
 Route::put('perfiles-usuarios/{perfilUsuario}/', 'API\PerfilUsuarioController@update');
+Route::delete('perfiles-usuarios/{idPerfilUsuario}/', 'API\PerfilUsuarioController@destroy');
 
 
 // Routes for Grupos
