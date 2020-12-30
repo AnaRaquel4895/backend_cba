@@ -69,6 +69,7 @@ Route::delete('perfiles-usuarios/{idPerfilUsuario}/', 'API\PerfilUsuarioControll
 Route::post('grupos', 'API\GrupoController@store');
 Route::get('grupos', 'API\GrupoController@index');
 Route::get('grupos/{grupo}/', 'API\GrupoController@show');
+Route::put('grupos/{grupo}/', 'API\GrupoController@update');
 
 
 // Routes for InscripcionGrupo

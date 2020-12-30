@@ -24,7 +24,7 @@ class GrupoResource extends JsonResource
             'horario_id' => $this->horario_id,
             'gestion_id' => $this->gestion_id,
             'numero' => '#',
-
+            'periodo' => $this->periodo,
             'usuario_nombre_completo' => $this->usuarioNombreCompleto,
             'programa_nombre' => $this->programaNombre,
             'curso_nombre' => $this->cursoNombre,

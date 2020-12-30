@@ -54,7 +54,8 @@ class GrupoController extends BaseController
      */
     public function update(Request $request, Grupo $grupo)
     {
-        //
+        $grupo->update($request->all());
+        return $this->sendResponse($grupo, 'Grupo editado');
     }
 
     /**
