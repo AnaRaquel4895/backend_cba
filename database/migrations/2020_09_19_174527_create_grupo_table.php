@@ -21,6 +21,7 @@ class CreateGrupoTable extends Migration
             $table->integer('nivel_id')->unsigned();
             $table->integer('horario_id')->unsigned();
             $table->integer('gestion_id')->unsigned();
+            $table->string('periodo');
             $table->timestamps();
             $table->foreign('perfil_usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('programa_id')->references('id')->on('programas')->onDelete('cascade');

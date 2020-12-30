@@ -14,7 +14,8 @@ class Grupo extends Model
         'curso_id',
         'nivel_id',
         'horario_id',
-        'gestion_id'
+        'gestion_id',
+        'periodo'
     ];
 
     protected $hidden = ['created_at', 'updated_at'];
