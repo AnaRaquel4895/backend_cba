@@ -25,6 +25,7 @@ Route::get('roles', 'API\RoleController@index');
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('auth/me', 'API\UserController@me');
+    Route::get('auth/me/permissions', 'API\UserController@permissions');
 });
 
 // Routes for Programas

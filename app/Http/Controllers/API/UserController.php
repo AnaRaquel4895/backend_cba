@@ -17,8 +17,8 @@ class UserController extends BaseController
             "password" => bcrypt($request->input("password"))
         ]);
         $user = User::create([
-            "name" => $request->input("nombres")." ".$request->input("apellidopaterno")." ".$request->input("apellidomaterno"),
-            "email" => $request->input("email"),            
+            "name" => $request->input("nombres") . " " . $request->input("apellidopaterno") . " " . $request->input("apellidomaterno"),
+            "email" => $request->input("email"),
             "password" => bcrypt($request->input("password"))
         ]);
         // $user = User::create($request->all());
@@ -27,12 +27,14 @@ class UserController extends BaseController
 
     public function login(Request $request)
     {
+        // dd($request->all());
         if (Auth::attempt($request->all())) {
             $user = Auth::user();
             // adding comment
             $result = [
-                "token" => $user->createToken("myApp")->accessToken
-            ];            
+                "token" => $user->createToken("myApp")->accessToken,
+                "user" => $user->name
+            ];
             return $this->sendResponse($result, "Inicio sesion", 200);
         } else {
             return $this->sendError("No authorizado", [], 401);
@@ -43,5 +45,11 @@ class UserController extends BaseController
     {
         $user = Auth::user();
         return $this->sendResponse($user, "Usuario Recuperado", 200);
+    }
+
+    public function permissions()
+    {
+        $user = Auth::user();
+        return $this->sendResponse($user->getAllPermissions(), "Lista de permisos", 200);
     }
 }

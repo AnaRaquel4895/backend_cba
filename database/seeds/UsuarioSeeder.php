@@ -30,41 +30,41 @@ class UsuarioSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Permisos 
-        Permission::create(['name' => 'registrar estudiantes']);
-        Permission::create(['name' => 'registrar profesores']);
-        Permission::create(['name' => 'crear grupos']);
-        Permission::create(['name' => 'asignar estudiantes grupo']);
-        Permission::create(['name' => 'asignar profesores grupo']);
+        Permission::create(['name' => 'USUARIOS.REGISTRAR']);
+        Permission::create(['name' => 'USUARIOS.LISTAR']);
+        Permission::create(['name' => 'GRUPOS.CREAR']);
+        Permission::create(['name' => 'GRUPOS.ASIGNAR_ESTUDIANTES']);
+        Permission::create(['name' => 'GRUPOS.ASIGNAR_PROFESORES']);
 
 
-        Permission::create(['name' => 'ver kardex']);
+        Permission::create(['name' => 'KARDEX.VER']);
 
 
-        Permission::create(['name' => 'registrar notas']);
+        Permission::create(['name' => 'NOTAS.REGISTRAR']);
 
 
-        // create roles and assign existing permissions
+        // Create roles and assign existing permissions
         $roleAdministrativo = Role::create(['name' => 'adminitrativo']);
-        $roleAdministrativo->givePermissionTo('registrar estudiantes');
-        $roleAdministrativo->givePermissionTo('registrar profesores');
-        $roleAdministrativo->givePermissionTo('crear grupos');
-        $roleAdministrativo->givePermissionTo('asignar estudiantes grupo');
-        $roleAdministrativo->givePermissionTo('asignar profesores grupo');
+        $roleAdministrativo->givePermissionTo('USUARIOS.REGISTRAR');
+        $roleAdministrativo->givePermissionTo('USUARIOS.LISTAR');
+        $roleAdministrativo->givePermissionTo('GRUPOS.CREAR');
+        $roleAdministrativo->givePermissionTo('GRUPOS.ASIGNAR_ESTUDIANTES');
+        $roleAdministrativo->givePermissionTo('GRUPOS.ASIGNAR_PROFESORES');
 
 
         $roleEstudiante = Role::create(['name' => 'estudiante']);
-        $roleEstudiante->givePermissionTo('ver kardex');
+        $roleEstudiante->givePermissionTo('KARDEX.VER');
 
 
         $roleProfesor = Role::create(['name' => 'profesor']);
-        $roleProfesor->givePermissionTo('registrar notas');
+        $roleProfesor->givePermissionTo('NOTAS.REGISTRAR');
 
 
         $roleSuperAdmin = Role::create(['name' => 'super-admin']);
 
         // create demo users
         $superAdmin = Factory(App\User::class)->create([
-            'name' => 'Example Super-Admin User',
+            'name' => 'Super-Admin',
             'email' => 'superadmin@example.com',
             'password' => Hash::make('superadmin'),
         ]);
@@ -357,7 +357,7 @@ class UsuarioSeeder extends Seeder
             'password' => Hash::make('123456'),
         ]);
         $estudiante15->assignRole($roleEstudiante);
-        
+
 
         /**
          * Creando perfiles para los  estudiantes y docentes.
@@ -595,17 +595,17 @@ class UsuarioSeeder extends Seeder
             'apellido_paterno' => 'Hirmas',
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
-            'celular' => '78303650', 
+            'celular' => '78303650',
             'user_id' => $profesor27->id
-     ]); 
-            $PerfilProfesor28 = PerfilUsuario::create([
-                'nombres' => 'Jose Luis',
-                'apellido_paterno' => 'Lopez',
-                'apellido_materno' => 'Estrada',
-                'carnet_identidad' => '8852874',
-                'celular' => '69433349',
-                'user_id' => $profesor28->id
-        
+        ]);
+        $PerfilProfesor28 = PerfilUsuario::create([
+            'nombres' => 'Jose Luis',
+            'apellido_paterno' => 'Lopez',
+            'apellido_materno' => 'Estrada',
+            'carnet_identidad' => '8852874',
+            'celular' => '69433349',
+            'user_id' => $profesor28->id
+
         ]);
         $perfilProfesor29 = PerfilUsuario::create([
             'nombres' => 'Lilian',
@@ -623,7 +623,7 @@ class UsuarioSeeder extends Seeder
             'celular' => '78323468',
             'user_id' => $profesor20->id
         ]);
-        
+
 
         $perfilEstudiante1 = PerfilUsuario::create([
             'nombres' => 'Lucas',
@@ -649,116 +649,114 @@ class UsuarioSeeder extends Seeder
             'carnet_identidad' => '1593549',
             'celular' => '65738920',
             'user_id' => $estudiante3->id
-            ]);
+        ]);
 
-            $perfilEstudiante4 = PerfilUsuario::create([
-                'nombres' => 'Franklin',
-                'apellido_paterno' => 'Morales',
-                'apellido_materno' => 'Lopez',
-                'carnet_identidad' => '1593549',
-                'celular' => '78322470',
-                'user_id' => $estudiante4->id
-            ]);
+        $perfilEstudiante4 = PerfilUsuario::create([
+            'nombres' => 'Franklin',
+            'apellido_paterno' => 'Morales',
+            'apellido_materno' => 'Lopez',
+            'carnet_identidad' => '1593549',
+            'celular' => '78322470',
+            'user_id' => $estudiante4->id
+        ]);
 
-             $perfilEstudiante5 = PerfilUsuario::create([
-                'nombres' => 'Jhonatan',
-                'apellido_paterno' => 'Candia',
-                'apellido_materno' => 'Romero',
-                'carnet_identidad' => '1593549',
-                 'celular' => '78794653',
-                'user_id' => $estudiante5->id
-             ]);
+        $perfilEstudiante5 = PerfilUsuario::create([
+            'nombres' => 'Jhonatan',
+            'apellido_paterno' => 'Candia',
+            'apellido_materno' => 'Romero',
+            'carnet_identidad' => '1593549',
+            'celular' => '78794653',
+            'user_id' => $estudiante5->id
+        ]);
 
-            $perfilEstudiante6 = PerfilUsuario::create([
-                 'nombres' => 'Luis',
-                'apellido_paterno' => 'Perez',
-                'apellido_materno' => 'Rojas',
-                'carnet_identidad' => '1593549',
-                 'celular' => '78756832',
-                 'user_id' => $estudiante6->id
-             ]);
+        $perfilEstudiante6 = PerfilUsuario::create([
+            'nombres' => 'Luis',
+            'apellido_paterno' => 'Perez',
+            'apellido_materno' => 'Rojas',
+            'carnet_identidad' => '1593549',
+            'celular' => '78756832',
+            'user_id' => $estudiante6->id
+        ]);
 
-             $perfilEstudiante7 = PerfilUsuario::create([
-                'nombres' => 'Diego',
-                 'apellido_paterno' => 'Montaño',
-                'apellido_materno' => 'Angulo',
-                'carnet_identidad' => '1593549',
-                'celular' => '65732431',
-                 'user_id' => $estudiante7->id
-            ]);
+        $perfilEstudiante7 = PerfilUsuario::create([
+            'nombres' => 'Diego',
+            'apellido_paterno' => 'Montaño',
+            'apellido_materno' => 'Angulo',
+            'carnet_identidad' => '1593549',
+            'celular' => '65732431',
+            'user_id' => $estudiante7->id
+        ]);
 
-             $perfilEstudiante8 = PerfilUsuario::create([
+        $perfilEstudiante8 = PerfilUsuario::create([
             'nombres' => 'Mijail',
             'apellido_paterno' => 'Blanco',
             'apellido_materno' => 'Mendez',
             'carnet_identidad' => '1593549',
             'celular' => '78675432',
             'user_id' => $estudiante8->id
-            ]);
+        ]);
 
-             $perfilEstudiante9 = PerfilUsuario::create([
+        $perfilEstudiante9 = PerfilUsuario::create([
             'nombres' => 'Laida',
             'apellido_paterno' => 'Gonzales',
             'apellido_materno' => 'Rojas',
             'carnet_identidad' => '1593549',
             'celular' => '78675438',
             'user_id' => $estudiante9->id
-            ]);
+        ]);
 
-             $perfilEstudiante10 = PerfilUsuario::create([
+        $perfilEstudiante10 = PerfilUsuario::create([
             'nombres' => 'Karen',
             'apellido_paterno' => 'Mendieta',
             'apellido_materno' => 'Mendez',
             'carnet_identidad' => '1593549',
             'celular' => '78675476',
             'user_id' => $estudiante10->id
-            ]);
+        ]);
 
-             $perfilEstudiante11 = PerfilUsuario::create([
+        $perfilEstudiante11 = PerfilUsuario::create([
             'nombres' => 'Gabriel',
             'apellido_paterno' => 'Guzman',
             'apellido_materno' => 'Perez',
             'carnet_identidad' => '1593549',
             'celular' => '78675782',
             'user_id' => $estudiante11->id
-            ]);
+        ]);
 
-             $perfilEstudiante12 = PerfilUsuario::create([
+        $perfilEstudiante12 = PerfilUsuario::create([
             'nombres' => 'Lupe',
             'apellido_paterno' => 'Fernandez',
             'apellido_materno' => '',
             'carnet_identidad' => '1593549',
             'celular' => '78675874',
             'user_id' => $estudiante12->id
-            ]);
+        ]);
 
-             $perfilEstudiante13 = PerfilUsuario::create([
+        $perfilEstudiante13 = PerfilUsuario::create([
             'nombres' => 'Mariela',
             'apellido_paterno' => 'Cladera',
             'apellido_materno' => 'Mamani',
             'carnet_identidad' => '1593549',
             'celular' => '78675430',
             'user_id' => $estudiante13->id
-            ]);
+        ]);
 
-             $perfilEstudiante14 = PerfilUsuario::create([
+        $perfilEstudiante14 = PerfilUsuario::create([
             'nombres' => 'Gerardo',
             'apellido_paterno' => 'Zeballos',
             'apellido_materno' => 'Liendro',
             'carnet_identidad' => '1593549',
             'celular' => '78675123',
             'user_id' => $estudiante14->id
-            ]);
+        ]);
 
-             $perfilEstudiante15 = PerfilUsuario::create([
+        $perfilEstudiante15 = PerfilUsuario::create([
             'nombres' => 'Mauricio',
             'apellido_paterno' => 'Ayala',
             'apellido_materno' => 'Zegarra',
             'carnet_identidad' => '1593549',
             'celular' => '78675431',
             'user_id' => $estudiante15->id
-            ]);
-
-             
+        ]);
     }
 }
