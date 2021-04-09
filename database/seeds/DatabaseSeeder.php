@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HorarioSeeder::class);
         $this->call(NivelSeeder::class);
         $this->call(ProgramaSeeder::class);
+        $this->call(NoticiaSeeder::class);
     }
 }

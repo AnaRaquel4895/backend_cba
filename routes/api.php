@@ -86,3 +86,9 @@ Route::post('eventos', 'API\EventoController@store');
 Route::get('eventos', 'API\EventoController@index');
 Route::get('eventos/{evento}/', 'API\EventoController@show');
 Route::put('eventos/{evento}/', 'API\EventoController@update');
+
+// Routes for Evento
+Route::get('noticias', 'API\NoticiaController@index'); // Listar noticia
+Route::post('noticias', 'API\NoticiaController@store'); // Guardar las noticias
+Route::get('noticias/{noticia}/', 'API\NoticiaController@show'); // Obtiene una noticia por id
+Route::put('noticias/{noticia}/', 'API\NoticiaController@update'); // Actualiza una notica
