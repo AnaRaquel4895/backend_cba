@@ -92,3 +92,4 @@ Route::get('noticias', 'API\NoticiaController@index'); // Listar noticia
 Route::post('noticias', 'API\NoticiaController@store'); // Guardar las noticias
 Route::get('noticias/{noticia}/', 'API\NoticiaController@show'); // Obtiene una noticia por id
 Route::put('noticias/{noticia}/', 'API\NoticiaController@update'); // Actualiza una notica
+Route::delete('noticias/{noticia}/', 'API\NoticiaController@destroy');

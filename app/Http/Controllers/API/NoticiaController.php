@@ -65,6 +65,7 @@ class NoticiaController extends BaseController
      */
     public function destroy(Noticia $noticia)
     {
-        //
+        $noticia->delete();
+        return $this->sendResponse($noticia, 'Noticia eliminada');
     }
 }

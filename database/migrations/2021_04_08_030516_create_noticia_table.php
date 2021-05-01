@@ -18,6 +18,7 @@ class CreateNoticiaTable extends Migration
             $table->char('titulo', 1000);
             $table->char('descripcion', 1000)->nullable(); 
             $table->date('fecha');
+            $table->char('link', 1000)->nullable();
             $table->timestamps();
         });
     }

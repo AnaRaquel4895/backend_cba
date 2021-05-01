@@ -11,7 +11,8 @@ class Noticia extends Model
     protected $fillable = [
         'titulo',
         'descripcion',
-        'fecha'
+        'fecha',
+        'link'
     ];
 
     protected $hidden = ['created_at', 'updated_at'];
