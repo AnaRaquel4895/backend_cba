@@ -71,6 +71,7 @@ Route::post('grupos', 'API\GrupoController@store');
 Route::get('grupos', 'API\GrupoController@index');
 Route::get('grupos/{grupo}/', 'API\GrupoController@show');
 Route::put('grupos/{grupo}/', 'API\GrupoController@update');
+Route::delete('grupos/{grupo}/', 'API\GrupoController@destroy');
 
 
 // Routes for InscripcionGrupo

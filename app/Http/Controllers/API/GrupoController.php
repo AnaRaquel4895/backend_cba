@@ -66,6 +66,7 @@ class GrupoController extends BaseController
      */
     public function destroy(Grupo $grupo)
     {
-        //
+        $grupo->delete();
+        return $this->sendResponse($grupo, 'Grupo eliminado');
     }
 }
