@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NivelSeeder::class);
         $this->call(ProgramaSeeder::class);
         $this->call(NoticiaSeeder::class);
+        $this->call(GrupoSeeder::class);
     }
 }
