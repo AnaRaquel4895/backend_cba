@@ -30,8 +30,7 @@ class UsuarioSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         /**>>>>>>>>>>> PERMISIONS <<<<<<<<<<<<<< */
-        // Permission::create(['name' => 'USUARIOS.REGISTRAR']);
-        Permission::create(['name' =>  'can_view_home']);
+        Permission::create(['name' => 'can_view_home']);
         /*Permisos de usuarios*/
         Permission::create(['name' => 'can_list_usuarios']);
         Permission::create(['name' => 'can_edit_usuarios']);
@@ -39,13 +38,14 @@ class UsuarioSeeder extends Seeder
         Permission::create(['name' => 'can_create_usuarios']);
 
         /*Permisos de grupos*/
+        Permission::create(['name' => 'can_read_usuarios']); 
         Permission::create(['name' => 'can_list_grupos']);
         Permission::create(['name' => 'can_edit_grupos']);
         Permission::create(['name' => 'can_delete_grupos']);
         Permission::create(['name' => 'can_create_grupos']);
         Permission::create(['name' => 'can_add_student_grupos']);
+        Permission::create(['name' => 'can_read_grupos']);
         Permission::create(['name' => 'can_filter_grupos']);
-
         /*Permisos de calificaciones*/
         Permission::create(['name' => 'can_add_grades_calificaciones']);
         Permission::create(['name' => 'can_edit_calificaciones']);
@@ -56,42 +56,49 @@ class UsuarioSeeder extends Seeder
         Permission::create(['name' => 'can_read_events_calendario']);
 
         /*Permisos de programas*/
+        Permission::create(['name' => 'can_read_programas']); 
         Permission::create(['name' => 'can_list_programas']);
         Permission::create(['name' => 'can_edit_programas']);
         Permission::create(['name' => 'can_delete_programas']);
         Permission::create(['name' => 'can_create_programas']);
 
         /*Permisos de cursos*/
+        Permission::create(['name' => 'can_read_cursos']); 
         Permission::create(['name' => 'can_list_cursos']);
         Permission::create(['name' => 'can_edit_cursos']);
         Permission::create(['name' => 'can_delete_cursos']);
         Permission::create(['name' => 'can_create_cursos']);
 
         /*Permisos de niveles*/
+        Permission::create(['name' => 'can_read_niveles']); 
         Permission::create(['name' => 'can_list_niveles']);
         Permission::create(['name' => 'can_edit_niveles']);
         Permission::create(['name' => 'can_delete_niveles']);
         Permission::create(['name' => 'can_create_niveles']);
 
         /*Permisos de horarios*/
+        Permission::create(['name' => 'can_read_horarios']); 
         Permission::create(['name' => 'can_list_horarios']);
         Permission::create(['name' => 'can_edit_horarios']);
         Permission::create(['name' => 'can_delete_horarios']);
         Permission::create(['name' => 'can_create_horarios']);
 
         /*Permisos de gestiones*/
+        Permission::create(['name' => 'can_read_gestiones']); 
         Permission::create(['name' => 'can_list_gestiones']);
         Permission::create(['name' => 'can_edit_gestiones']);
         Permission::create(['name' => 'can_delete_gestiones']);
         Permission::create(['name' => 'can_create_gestiones']);
 
         /*Permisos de eventos*/
+        Permission::create(['name' => 'can_read_eventos']); 
         Permission::create(['name' => 'can_list_eventos']);
         Permission::create(['name' => 'can_edit_eventos']);
         Permission::create(['name' => 'can_delete_eventos']);
         Permission::create(['name' => 'can_create_eventos']);
 
         /*Permisos de noticias*/
+        Permission::create(['name' => 'can_read_noticias']); 
         Permission::create(['name' => 'can_list_noticias']);
         Permission::create(['name' => 'can_edit_noticias']);
         Permission::create(['name' => 'can_delete_noticias']);
@@ -125,10 +132,12 @@ class UsuarioSeeder extends Seeder
         /**>>>>>>>>>>> PERMISSION ASSIGNMENT <<<<<<<<<<<<<< */
         // ADMINISTRATIVO
         $roleAdministrativo->givePermissionTo('can_view_home');
+        $roleAdministrativo->givePermissionTo('can_read_usuarios'); 
         $roleAdministrativo->givePermissionTo('can_list_usuarios');
         $roleAdministrativo->givePermissionTo('can_edit_usuarios');
         $roleAdministrativo->givePermissionTo('can_delete_usuarios');
         $roleAdministrativo->givePermissionTo('can_create_usuarios');
+        $roleAdministrativo->givePermissionTo('can_read_grupos'); 
         $roleAdministrativo->givePermissionTo('can_list_grupos');
         $roleAdministrativo->givePermissionTo('can_edit_grupos');
         $roleAdministrativo->givePermissionTo('can_delete_grupos');
@@ -137,30 +146,37 @@ class UsuarioSeeder extends Seeder
         $roleAdministrativo->givePermissionTo('can_filter_grupos');
         $roleAdministrativo->givePermissionTo('can_read_calificaciones');
         $roleAdministrativo->givePermissionTo('can_read_events_calendario');
+        $roleAdministrativo->givePermissionTo('can_read_programas'); 
         $roleAdministrativo->givePermissionTo('can_list_programas');
         $roleAdministrativo->givePermissionTo('can_edit_programas');
         $roleAdministrativo->givePermissionTo('can_delete_programas');
         $roleAdministrativo->givePermissionTo('can_create_programas');
+        $roleAdministrativo->givePermissionTo('can_read_cursos'); 
         $roleAdministrativo->givePermissionTo('can_list_cursos');
         $roleAdministrativo->givePermissionTo('can_edit_cursos');
         $roleAdministrativo->givePermissionTo('can_delete_cursos');
         $roleAdministrativo->givePermissionTo('can_create_cursos');
+        $roleAdministrativo->givePermissionTo('can_read_niveles'); 
         $roleAdministrativo->givePermissionTo('can_list_niveles');
         $roleAdministrativo->givePermissionTo('can_edit_niveles');
         $roleAdministrativo->givePermissionTo('can_delete_niveles');
         $roleAdministrativo->givePermissionTo('can_create_niveles');
+        $roleAdministrativo->givePermissionTo('can_read_horarios'); 
         $roleAdministrativo->givePermissionTo('can_list_horarios');
         $roleAdministrativo->givePermissionTo('can_edit_horarios');
         $roleAdministrativo->givePermissionTo('can_delete_horarios');
         $roleAdministrativo->givePermissionTo('can_create_horarios');
+        $roleAdministrativo->givePermissionTo('can_read_gestiones'); 
         $roleAdministrativo->givePermissionTo('can_list_gestiones');
         $roleAdministrativo->givePermissionTo('can_edit_gestiones');
         $roleAdministrativo->givePermissionTo('can_delete_gestiones');
         $roleAdministrativo->givePermissionTo('can_create_gestiones');
+        $roleAdministrativo->givePermissionTo('can_read_eventos'); 
         $roleAdministrativo->givePermissionTo('can_list_eventos');
         $roleAdministrativo->givePermissionTo('can_edit_eventos');
         $roleAdministrativo->givePermissionTo('can_delete_eventos');
         $roleAdministrativo->givePermissionTo('can_create_eventos');
+        $roleAdministrativo->givePermissionTo('can_read_noticias'); 
         $roleAdministrativo->givePermissionTo('can_list_noticias');
         $roleAdministrativo->givePermissionTo('can_edit_noticias');
         $roleAdministrativo->givePermissionTo('can_delete_noticias');
@@ -169,21 +185,83 @@ class UsuarioSeeder extends Seeder
         $roleEstudiante->givePermissionTo('can_view_home');
         $roleEstudiante->givePermissionTo('can_read_calificaciones');
         $roleEstudiante->givePermissionTo('can_read_events_calendario');
+        $roleEstudiante->givePermissionTo('can_read_noticias'); 
         $roleEstudiante->givePermissionTo('can_list_noticias');
         // PROFESOR
         $roleProfesor->givePermissionTo('can_view_home');
+        $roleProfesor->givePermissionTo('can_read_calificaciones'); 
         $roleProfesor->givePermissionTo('can_add_grades_calificaciones');
         $roleProfesor->givePermissionTo('can_edit_calificaciones');
+        $roleProfesor->givePermissionTo('can_read_usuarios'); 
         $roleProfesor->givePermissionTo('can_list_usuarios');
+        $roleProfesor->givePermissionTo('can_read_programas'); 
         $roleProfesor->givePermissionTo('can_list_programas');
+        $roleProfesor->givePermissionTo('can_read_cursos'); 
         $roleProfesor->givePermissionTo('can_list_cursos');
+        $roleProfesor->givePermissionTo('can_read_niveles'); 
         $roleProfesor->givePermissionTo('can_list_niveles');
+        $roleProfesor->givePermissionTo('can_read_horarios'); 
         $roleProfesor->givePermissionTo('can_list_horarios');
+        $roleProfesor->givePermissionTo('can_read_gestiones'); 
         $roleProfesor->givePermissionTo('can_list_gestiones');
+        $roleProfesor->givePermissionTo('can_read_eventos'); 
+        $roleProfesor->givePermissionTo('can_read_events_calendario'); 
         $roleProfesor->givePermissionTo('can_list_eventos');
+        $roleProfesor->givePermissionTo('can_read_noticias'); 
         $roleProfesor->givePermissionTo('can_list_noticias');
-        // Este permiso faltaba
-        $roleProfesor->givePermissionTo('can_read_calificaciones');
+        // SUPERADMIN
+        $roleSuperAdmin->givePermissionTo('can_view_home');
+        $roleSuperAdmin->givePermissionTo('can_list_usuarios');
+        $roleSuperAdmin->givePermissionTo('can_edit_usuarios');
+        $roleSuperAdmin->givePermissionTo('can_delete_usuarios');
+        $roleSuperAdmin->givePermissionTo('can_create_usuarios');
+        $roleSuperAdmin->givePermissionTo('can_read_usuarios');
+        $roleSuperAdmin->givePermissionTo('can_list_grupos');
+        $roleSuperAdmin->givePermissionTo('can_edit_grupos');
+        $roleSuperAdmin->givePermissionTo('can_delete_grupos');
+        $roleSuperAdmin->givePermissionTo('can_create_grupos');
+        $roleSuperAdmin->givePermissionTo('can_add_student_grupos');
+        $roleSuperAdmin->givePermissionTo('can_filter_grupos');
+        $roleSuperAdmin->givePermissionTo('can_read_grupos');
+        $roleSuperAdmin->givePermissionTo('can_add_grades_calificaciones');
+        $roleSuperAdmin->givePermissionTo('can_edit_calificaciones');
+        $roleSuperAdmin->givePermissionTo('can_read_calificaciones');
+        $roleSuperAdmin->givePermissionTo('can_read_events_calendario');
+        $roleSuperAdmin->givePermissionTo('can_read_programas');
+        $roleSuperAdmin->givePermissionTo('can_list_programas');
+        $roleSuperAdmin->givePermissionTo('can_edit_programas');
+        $roleSuperAdmin->givePermissionTo('can_delete_programas');
+        $roleSuperAdmin->givePermissionTo('can_create_programas');
+        $roleSuperAdmin->givePermissionTo('can_read_cursos');
+        $roleSuperAdmin->givePermissionTo('can_list_cursos');
+        $roleSuperAdmin->givePermissionTo('can_edit_cursos');
+        $roleSuperAdmin->givePermissionTo('can_delete_cursos');
+        $roleSuperAdmin->givePermissionTo('can_create_cursos');
+        $roleSuperAdmin->givePermissionTo('can_read_niveles');
+        $roleSuperAdmin->givePermissionTo('can_list_niveles');
+        $roleSuperAdmin->givePermissionTo('can_edit_niveles');
+        $roleSuperAdmin->givePermissionTo('can_delete_niveles');
+        $roleSuperAdmin->givePermissionTo('can_create_niveles');
+        $roleSuperAdmin->givePermissionTo('can_read_horarios');
+        $roleSuperAdmin->givePermissionTo('can_list_horarios');
+        $roleSuperAdmin->givePermissionTo('can_edit_horarios');
+        $roleSuperAdmin->givePermissionTo('can_delete_horarios');
+        $roleSuperAdmin->givePermissionTo('can_create_horarios');
+        $roleSuperAdmin->givePermissionTo('can_read_gestiones');
+        $roleSuperAdmin->givePermissionTo('can_list_gestiones');
+        $roleSuperAdmin->givePermissionTo('can_edit_gestiones');
+        $roleSuperAdmin->givePermissionTo('can_delete_gestiones');
+        $roleSuperAdmin->givePermissionTo('can_create_gestiones');
+        $roleSuperAdmin->givePermissionTo('can_read_eventos');
+        $roleSuperAdmin->givePermissionTo('can_list_eventos');
+        $roleSuperAdmin->givePermissionTo('can_edit_eventos');
+        $roleSuperAdmin->givePermissionTo('can_delete_eventos');
+        $roleSuperAdmin->givePermissionTo('can_create_eventos');
+        $roleSuperAdmin->givePermissionTo('can_read_noticias');
+        $roleSuperAdmin->givePermissionTo('can_list_noticias');
+        $roleSuperAdmin->givePermissionTo('can_edit_noticias');
+        $roleSuperAdmin->givePermissionTo('can_delete_noticias');
+        $roleSuperAdmin->givePermissionTo('can_create_noticias');
         /**>>>>>>>>>>> END PERMISSION ASSIGNMENT <<<<<<<<<<<<<< */
 
         // create demo users
