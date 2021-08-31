@@ -64,6 +64,7 @@ class EventoController extends BaseController
      */
     public function destroy(Evento $evento)
     {
-        //
+        $evento->delete();
+        return $this->sendResponse($evento, 'Evento eliminada');
     }
 }
