@@ -51,9 +51,10 @@ class PerfilUsuarioController extends BaseController
             'apellido_materno' => $request->input("apellido_materno"),
             'carnet_identidad' => $request->input("carnet_identidad"),
             'celular' => $request->input("celular"),
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'role_id' => $request->input("role_id")
         ]);
-
+        
         $role = Role::find($request->input("role_id"));
         $user->assignRole($role);
 

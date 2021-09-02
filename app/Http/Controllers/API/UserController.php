@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use App\MODELS\PerfilUsuario;
 
 
 class UserController extends BaseController
@@ -44,7 +45,15 @@ class UserController extends BaseController
     public function me()
     {
         $user = Auth::user();
-        return $this->sendResponse($user, "Usuario Recuperado", 200);
+        // dd();
+       
+        $perfiles = PerfilUsuario::where('user_id', '=', $user->id)->get();
+        // dd(count($perfiles));
+        $result = [
+            "user" => $user,
+            "perfil" => count($perfiles)>0 ? $perfiles[0]: NULL
+        ];
+        return $this->sendResponse($result, "Usuario Recuperado", 200);
     }
 
     public function permissions()

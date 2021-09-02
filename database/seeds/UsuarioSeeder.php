@@ -570,7 +570,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '',
             'celular' => '',
-            'user_id' => $profesor1->id
+            'user_id' => $profesor1->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor2 = PerfilUsuario::create([
@@ -579,7 +580,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '',
             'celular' => '',
-            'user_id' => $profesor2->id
+            'user_id' => $profesor2->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor3 = PerfilUsuario::create([
@@ -588,7 +590,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '70708030',
-            'user_id' => $profesor3->id
+            'user_id' => $profesor3->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor4 = PerfilUsuario::create([
@@ -597,7 +600,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '79792105',
-            'user_id' => $profesor4->id
+            'user_id' => $profesor4->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor5 = PerfilUsuario::create([
@@ -606,7 +610,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '79389975',
-            'user_id' => $profesor5->id
+            'user_id' => $profesor5->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor6 = PerfilUsuario::create([
@@ -615,7 +620,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Garcia',
             'carnet_identidad' => '8852874',
             'celular' => '73792119',
-            'user_id' => $profesor6->id
+            'user_id' => $profesor6->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor7 = PerfilUsuario::create([
@@ -624,7 +630,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '68472256',
-            'user_id' => $profesor7->id
+            'user_id' => $profesor7->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor8 = PerfilUsuario::create([
@@ -633,7 +640,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Quiroga',
             'carnet_identidad' => '8852874',
             'celular' => '77908850',
-            'user_id' => $profesor8->id
+            'user_id' => $profesor8->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor9 = PerfilUsuario::create([
@@ -642,7 +650,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '77900234',
-            'user_id' => $profesor9->id
+            'user_id' => $profesor9->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor10 = PerfilUsuario::create([
@@ -651,7 +660,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '75997678',
-            'user_id' => $profesor10->id
+            'user_id' => $profesor10->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor11 = PerfilUsuario::create([
@@ -660,7 +670,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Rocha',
             'carnet_identidad' => '8852874',
             'celular' => '70730618',
-            'user_id' => $profesor11->id
+            'user_id' => $profesor11->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor12 = PerfilUsuario::create([
@@ -669,7 +680,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Rocha',
             'carnet_identidad' => '8852874',
             'celular' => '77499964',
-            'user_id' => $profesor12->id
+            'user_id' => $profesor12->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor13 = PerfilUsuario::create([
@@ -678,7 +690,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Merritt',
             'carnet_identidad' => '8852874',
             'celular' => '72712073',
-            'user_id' => $profesor13->id
+            'user_id' => $profesor13->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor14 = PerfilUsuario::create([
@@ -687,7 +700,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '67489056',
-            'user_id' => $profesor14->id
+            'user_id' => $profesor14->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor15 = PerfilUsuario::create([
@@ -696,7 +710,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '60761188',
-            'user_id' => $profesor15->id
+            'user_id' => $profesor15->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor16 = PerfilUsuario::create([
@@ -705,7 +720,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '67501508',
-            'user_id' => $profesor16->id
+            'user_id' => $profesor16->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor17 = PerfilUsuario::create([
@@ -714,7 +730,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Oña',
             'carnet_identidad' => '8852874',
             'celular' => '78331587',
-            'user_id' => $profesor17->id
+            'user_id' => $profesor17->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor18 = PerfilUsuario::create([
@@ -723,7 +740,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '60341762',
-            'user_id' => $profesor18->id
+            'user_id' => $profesor18->id,
+            'role_id' => $roleProfesor->id
         ]);
 
 
@@ -733,7 +751,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '65723505',
-            'user_id' => $profesor19->id
+            'user_id' => $profesor19->id,
+            'role_id' => $roleProfesor->id
         ]);
 
         $perfilProfesor20 = PerfilUsuario::create([
@@ -742,7 +761,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '78323468',
-            'user_id' => $profesor20->id
+            'user_id' => $profesor20->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor21 = PerfilUsuario::create([
             'nombres' => 'Gabriela',
@@ -750,7 +770,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '78323468',
-            'user_id' => $profesor21->id
+            'user_id' => $profesor21->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor22 = PerfilUsuario::create([
             'nombres' => 'Jaquelin',
@@ -758,7 +779,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '61781617',
-            'user_id' => $profesor22->id
+            'user_id' => $profesor22->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor23 = PerfilUsuario::create([
             'nombres' => 'Carol',
@@ -766,7 +788,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '60725060',
-            'user_id' => $profesor23->id
+            'user_id' => $profesor23->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor24 = PerfilUsuario::create([
             'nombres' => 'Mariana',
@@ -774,7 +797,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '77485363',
-            'user_id' => $profesor24->id
+            'user_id' => $profesor24->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor25 = PerfilUsuario::create([
             'nombres' => 'Susan',
@@ -782,7 +806,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '71408298',
-            'user_id' => $profesor25->id
+            'user_id' => $profesor25->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor26 = PerfilUsuario::create([
             'nombres' => 'Jose Antonio',
@@ -790,7 +815,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Muñoz',
             'carnet_identidad' => '8852874',
             'celular' => '77498709',
-            'user_id' => $profesor26->id
+            'user_id' => $profesor26->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor27 = PerfilUsuario::create([
             'nombres' => 'Daniela',
@@ -798,7 +824,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '78303650',
-            'user_id' => $profesor27->id
+            'user_id' => $profesor27->id,
+            'role_id' => $roleProfesor->id
         ]);
         $PerfilProfesor28 = PerfilUsuario::create([
             'nombres' => 'Jose Luis',
@@ -806,7 +833,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Estrada',
             'carnet_identidad' => '8852874',
             'celular' => '69433349',
-            'user_id' => $profesor28->id
+            'user_id' => $profesor28->id,
+            'role_id' => $roleProfesor->id
 
         ]);
         $perfilProfesor29 = PerfilUsuario::create([
@@ -815,7 +843,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '76968421',
-            'user_id' => $profesor29->id
+            'user_id' => $profesor29->id,
+            'role_id' => $roleProfesor->id
         ]);
         $perfilProfesor30 = PerfilUsuario::create([
             'nombres' => 'Fernando',
@@ -823,7 +852,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '8852874',
             'celular' => '78323468',
-            'user_id' => $profesor20->id
+            'user_id' => $profesor30->id,
+            'role_id' => $roleProfesor->id
         ]);
 
 
@@ -833,7 +863,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Gonzales',
             'carnet_identidad' => '1593549',
             'celular' => '78322472',
-            'user_id' => $estudiante1->id
+            'user_id' => $estudiante1->id,
+            'role_id' => $roleEstudiante->id
         ]);
         $perfilEstudiante2 = PerfilUsuario::create([
             'nombres' => 'Manuel',
@@ -841,7 +872,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Luizaga',
             'carnet_identidad' => '1593549',
             'celular' => '70731298',
-            'user_id' => $estudiante2->id
+            'user_id' => $estudiante2->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante3 = PerfilUsuario::create([
@@ -850,7 +882,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Vega',
             'carnet_identidad' => '1593549',
             'celular' => '65738920',
-            'user_id' => $estudiante3->id
+            'user_id' => $estudiante3->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante4 = PerfilUsuario::create([
@@ -859,7 +892,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Lopez',
             'carnet_identidad' => '1593549',
             'celular' => '78322470',
-            'user_id' => $estudiante4->id
+            'user_id' => $estudiante4->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante5 = PerfilUsuario::create([
@@ -868,7 +902,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Romero',
             'carnet_identidad' => '1593549',
             'celular' => '78794653',
-            'user_id' => $estudiante5->id
+            'user_id' => $estudiante5->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante6 = PerfilUsuario::create([
@@ -877,7 +912,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Rojas',
             'carnet_identidad' => '1593549',
             'celular' => '78756832',
-            'user_id' => $estudiante6->id
+            'user_id' => $estudiante6->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante7 = PerfilUsuario::create([
@@ -886,7 +922,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Angulo',
             'carnet_identidad' => '1593549',
             'celular' => '65732431',
-            'user_id' => $estudiante7->id
+            'user_id' => $estudiante7->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante8 = PerfilUsuario::create([
@@ -895,7 +932,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Mendez',
             'carnet_identidad' => '1593549',
             'celular' => '78675432',
-            'user_id' => $estudiante8->id
+            'user_id' => $estudiante8->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante9 = PerfilUsuario::create([
@@ -904,7 +942,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Rojas',
             'carnet_identidad' => '1593549',
             'celular' => '78675438',
-            'user_id' => $estudiante9->id
+            'user_id' => $estudiante9->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante10 = PerfilUsuario::create([
@@ -913,7 +952,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Mendez',
             'carnet_identidad' => '1593549',
             'celular' => '78675476',
-            'user_id' => $estudiante10->id
+            'user_id' => $estudiante10->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante11 = PerfilUsuario::create([
@@ -922,7 +962,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Perez',
             'carnet_identidad' => '1593549',
             'celular' => '78675782',
-            'user_id' => $estudiante11->id
+            'user_id' => $estudiante11->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante12 = PerfilUsuario::create([
@@ -931,7 +972,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => '',
             'carnet_identidad' => '1593549',
             'celular' => '78675874',
-            'user_id' => $estudiante12->id
+            'user_id' => $estudiante12->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante13 = PerfilUsuario::create([
@@ -940,7 +982,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Mamani',
             'carnet_identidad' => '1593549',
             'celular' => '78675430',
-            'user_id' => $estudiante13->id
+            'user_id' => $estudiante13->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante14 = PerfilUsuario::create([
@@ -949,7 +992,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Liendro',
             'carnet_identidad' => '1593549',
             'celular' => '78675123',
-            'user_id' => $estudiante14->id
+            'user_id' => $estudiante14->id,
+            'role_id' => $roleEstudiante->id
         ]);
 
         $perfilEstudiante15 = PerfilUsuario::create([
@@ -958,7 +1002,8 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Zegarra',
             'carnet_identidad' => '1593549',
             'celular' => '78675431',
-            'user_id' => $estudiante15->id
+            'user_id' => $estudiante15->id,
+            'role_id' => $roleEstudiante->id
         ]);
     }
 }

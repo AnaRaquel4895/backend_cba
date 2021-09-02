@@ -19,7 +19,8 @@ class PerfilUsuario extends Model
         'apellido_materno',
         'carnet_identidad',
         'celular',
-        'user_id'
+        'user_id',
+        'role_id'
     ];
 
     protected $hidden = ['created_at', 'updated_at'];

@@ -37,9 +37,10 @@ class RoleController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($role_id)
+    {       
+        $role = \Spatie\Permission\Models\Role::find($role_id);
+        return $this->sendResponse($role, "Role Found", 201);
     }
 
     /**
