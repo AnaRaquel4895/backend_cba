@@ -103,6 +103,10 @@ class UsuarioSeeder extends Seeder
         Permission::create(['name' => 'can_edit_noticias']);
         Permission::create(['name' => 'can_delete_noticias']);
         Permission::create(['name' => 'can_create_noticias']);
+
+        /*Permisos de kardex */
+        Permission::create(['name' => 'can_view_kardex']);
+        Permission::create(['name' => 'can_view_kardex_admin']);
        /**>>>>>>>>>>> END PERMISIONS <<<<<<<<<<<<<< */
 
 
@@ -183,10 +187,10 @@ class UsuarioSeeder extends Seeder
         $roleAdministrativo->givePermissionTo('can_create_noticias');
         // ESTUDIANTE
         $roleEstudiante->givePermissionTo('can_view_home');
-        $roleEstudiante->givePermissionTo('can_read_calificaciones');
         $roleEstudiante->givePermissionTo('can_read_events_calendario');
         $roleEstudiante->givePermissionTo('can_read_noticias'); 
         $roleEstudiante->givePermissionTo('can_list_noticias');
+        $roleEstudiante->givePermissionTo('can_view_kardex');
         // PROFESOR
         $roleProfesor->givePermissionTo('can_view_home');
         $roleProfesor->givePermissionTo('can_read_calificaciones'); 
