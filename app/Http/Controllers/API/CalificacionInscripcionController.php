@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\MODELS\CalificacionInscripcion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController;
+use App\Http\Resources\CalificacionInscripcionResource;
 
 class CalificacionInscripcionController extends BaseController
 {
@@ -16,7 +17,9 @@ class CalificacionInscripcionController extends BaseController
      */
     public function index()
     {
-        //
+        $calificaciones = CalificacionInscripcion::all();
+        $collection = CalificacionInscripcionResource::collection($calificaciones);
+        return $this->sendResponse($collection, 'Lista de calificaciones');
     }
 
     /**

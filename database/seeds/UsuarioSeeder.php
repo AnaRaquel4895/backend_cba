@@ -863,7 +863,7 @@ class UsuarioSeeder extends Seeder
             'apellido_materno' => 'Gonzales',
             'carnet_identidad' => '1593549',
             'celular' => '78322472',
-            'user_id' => $estudiante1->id,
+            'user_id' => $estudiante2->id,
             'role_id' => $roleEstudiante->id
         ]);
         $perfilEstudiante2 = PerfilUsuario::create([

@@ -20,6 +20,13 @@ class InscripcionGrupo extends Model
         return $this->belongsTo('App\MODELS\PerfilUsuario');
     }
 
+    public function grupo()
+    {
+        return $this->belongsTo('App\MODELS\Grupo');
+        //  return $this->hasOne(Phone::class);
+    }
+
+
     public function calificacionInscripcion()
     {
         return $this->hasOne('App\MODELS\CalificacionInscripcion');
