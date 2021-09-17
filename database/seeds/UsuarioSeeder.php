@@ -185,6 +185,8 @@ class UsuarioSeeder extends Seeder
         $roleAdministrativo->givePermissionTo('can_edit_noticias');
         $roleAdministrativo->givePermissionTo('can_delete_noticias');
         $roleAdministrativo->givePermissionTo('can_create_noticias');
+
+        $roleAdministrativo->givePermissionTo('can_view_kardex_admin');
         // ESTUDIANTE
         $roleEstudiante->givePermissionTo('can_view_home');
         $roleEstudiante->givePermissionTo('can_read_events_calendario');
@@ -213,6 +215,7 @@ class UsuarioSeeder extends Seeder
         $roleProfesor->givePermissionTo('can_list_eventos');
         $roleProfesor->givePermissionTo('can_read_noticias'); 
         $roleProfesor->givePermissionTo('can_list_noticias');
+        $roleProfesor->givePermissionTo('can_view_kardex_admin');
         // SUPERADMIN
         $roleSuperAdmin->givePermissionTo('can_view_home');
         $roleSuperAdmin->givePermissionTo('can_list_usuarios');
@@ -266,6 +269,7 @@ class UsuarioSeeder extends Seeder
         $roleSuperAdmin->givePermissionTo('can_edit_noticias');
         $roleSuperAdmin->givePermissionTo('can_delete_noticias');
         $roleSuperAdmin->givePermissionTo('can_create_noticias');
+        $roleProfesor->givePermissionTo('can_view_kardex_admin');
         /**>>>>>>>>>>> END PERMISSION ASSIGNMENT <<<<<<<<<<<<<< */
 
         // create demo users
